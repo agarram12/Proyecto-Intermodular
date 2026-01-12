@@ -1,24 +1,50 @@
-
 <!DOCTYPE html>
 <html lang="es">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Recetas fáciles</title>
-        <link rel="stylesheet" href="./estilos/style.css">
-        <script src="./scripts/script.js"></script>
-    </head>
-    <body>
-        <header>
-
-        </header>
-        <main>
-            <section>
-
-            </section>
-        </main>
-        <footer>
-
-        </footer>
-    </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RecetasFáciles - Feed</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="./assets/style/styles.css">
+</head>
+<body class="bg-light"> <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./assets/scripts/script.js"></script>
+    <!-- Cabecera de la página -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
+        <!-- Apartado del logo-->
+        <div class="container">
+            <a class="navbar-brand fw-bold text-primary" href="#">Recetas Fáciles</a>
+            <!-- Barra de búsqueda-->
+            <form class="d-none d-md-flex ms-4 w-50">
+                <input class="form-control me-2" type="search" placeholder="Buscar receta o ingrediente." aria-label="Search">
+            </form>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- Apartado de inicio y accesos rápidos -->
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav align-items-center">
+                    <li class="nav-item me-3"><a class="nav-link active" href="#"><i class="bi bi-house-door-fill fs-5"></i> Inicio</a></li>
+                    <!-- Menú y usuario-->
+                    <li class="nav-item dropdown">
+                        <!-- usuario y flecha desde que se mostrará el menú-->
+                        <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" role="button" data-bs-toggle="dropdown">
+                            <img src="./assets/img/usuario1.png" class="rounded-circle me-2" width="50" height="30" alt="Avatar de usuario">
+                            <span>Mi cuenta</span>
+                        </a>
+                        <!-- Menú desplegable con cada opción-->
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="perfil.html">Mi perfil</a></li>
+                            <!-- Separador de elementos con una barra horizontal-->
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item text-danger" href="#">Cerrar sesión</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</body>
 </html>
+
