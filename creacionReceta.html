@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear Nueva Receta - Pizca & Fácil</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="./assets/style/styles.css">
+</head>
+
+<body class="bg-light" style="padding-top: 100px;">
+
+    <nav class="navbar navbar-expand-lg fixed-top bg-white shadow-sm" style="min-height: 80px;">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <img src="assets/img/logo.png" alt="Logo" height="55" class="d-inline-block align-text-top">
+                <span class="ms-2 d-none d-sm-inline fw-bold text-primary" style="font-family: 'Poppins', sans-serif; font-size: 1.2rem;">Pizca & Fácil</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-center gap-3">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Cancelar</a></li>
+                    <li class="nav-item dropdown ms-2">
+                        <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" role="button" data-bs-toggle="dropdown">
+                            <img src="./assets/img/usuario1.png" class="rounded-circle border border-2 border-white shadow-sm" width="40" height="40" style="object-fit: cover;" alt="Avatar">
+                            <span class="fw-medium ms-2 d-none d-lg-block">Mi Cuenta</span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end shadow border-0" style="border-radius: 12px;">
+                            <li><a class="dropdown-item" href="index.html"><i class="bi bi-person me-2"></i> Mi Perfil</a></li>
+                            <li><a class="dropdown-item text-danger" href="#"><i class="bi bi-box-arrow-right me-2"></i> Cerrar Sesión</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container py-4">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h2 class="fw-bold mb-0">🍳 Crear nueva receta</h2>
+                    <button class="btn btn-outline-secondary btn-sm rounded-pill">Guardar borrador</button>
+                </div>
+
+                <form id="createRecipeForm">
+                    
+                    <div class="card border-0 shadow-sm mb-4">
+                        <div class="card-body p-4">
+                            <h5 class="fw-bold text-primary mb-3"><i class="bi bi-image me-2"></i>Portada y Descripción</h5>
+                            
+                            <div class="mb-4">
+                                <label class="form-label fw-medium">Foto del plato</label>
+                                <div class="border-2 border-dashed rounded-3 p-5 text-center bg-light" style="border-style: dashed; border-color: #ccc;">
+                                    <i class="bi bi-cloud-arrow-up fs-1 text-muted"></i>
+                                    <p class="text-muted mb-2">Arrastra tu foto aquí o haz clic para subir</p>
+                                    <input type="file" class="form-control d-none" id="recipeImage">
+                                    <button type="button" class="btn btn-outline-primary btn-sm rounded-pill mt-2" onclick="document.getElementById('recipeImage').click()">Seleccionar archivo</button>
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="title" class="form-label fw-medium">Título de la receta</label>
+                                <input type="text" class="form-control form-control-lg bg-light border-0" id="title" placeholder="Ej: Lasaña de la abuela">
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="description" class="form-label fw-medium">Descripción corta</label>
+                                <textarea class="form-control bg-light border-0" id="description" rows="3" placeholder="Cuenta la historia de este plato... ¿Por qué es especial?"></textarea>
+                            </div>
+
+                            <div class="row g-3">
+                                <div class="col-md-3 col-6">
+                                    <label class="form-label small text-muted text-uppercase fw-bold">Categoría</label>
+                                    <select class="form-select bg-light border-0">
+                                        <option selected>Elegir...</option>
+                                        <option value="1">🥗 Vegana</option>
+                                        <option value="2">🍖 Carnívora</option>
+                                        <option value="3">🍰 Postres</option>
+                                        <option value="4">🍝 Pasta</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="col-md-3 col-6">
+                                    <label class="form-label small text-muted text-uppercase fw-bold">Tiempo (min)</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text bg-light border-0 pe-1"><i class="bi bi-clock"></i></span>
+                                        <input type="number" class="form-control bg-light border-0 ps-1" placeholder="45">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-3 col-6">
+                                    <label class="form-label small text-muted text-uppercase fw-bold">Raciones</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text bg-light border-0 pe-1"><i class="bi bi-people"></i></span>
+                                        <input type="number" id="servingsInput" class="form-control bg-light border-0 ps-1" placeholder="2" value="2" min="1">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-3 col-6">
+                                    <label class="form-label small text-muted text-uppercase fw-bold">Dificultad</label>
+                                    <select class="form-select bg-light border-0">
+                                        <option value="1">🟢 Fácil</option>
+                                        <option value="2" selected>🟡 Media</option>
+                                        <option value="3">🔴 Difícil</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card border-0 shadow-sm mb-4">
+                        <div class="card-body p-4">
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <h5 class="fw-bold text-primary mb-0"><i class="bi bi-basket me-2"></i>Ingredientes</h5>
+                                <span id="servingsBadge" class="badge bg-light text-dark border">
+                                    <i class="bi bi-people-fill me-1"></i> <span id="servingsCount">2</span> personas
+                                </span>
+                            </div>
+                            
+                            <div id="ingredientsList">
+                                <div class="input-group mb-2">
+                                    <span class="input-group-text bg-white border-end-0"><i class="bi bi-dot"></i></span>
+                                    <input type="text" class="form-control border-start-0" placeholder="Ej: 500g de Harina">
+                                    <button class="btn btn-outline-danger border-start-0" type="button"><i class="bi bi-x"></i></button>
+                                </div>
+                                <div class="input-group mb-2">
+                                    <span class="input-group-text bg-white border-end-0"><i class="bi bi-dot"></i></span>
+                                    <input type="text" class="form-control border-start-0" placeholder="Ej: 2 Huevos">
+                                    <button class="btn btn-outline-danger border-start-0" type="button"><i class="bi bi-x"></i></button>
+                                </div>
+                            </div>
+
+                            <button type="button" id="addIngredientBtn" class="btn btn-light text-primary w-100 mt-2 dashed-border">
+                                <i class="bi bi-plus-circle me-1"></i> Añadir otro ingrediente
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="card border-0 shadow-sm mb-4">
+                        <div class="card-body p-4">
+                            <h5 class="fw-bold text-primary mb-3"><i class="bi bi-list-ol me-2"></i>Pasos de preparación</h5>
+                            
+                            <div id="stepsList">
+                                <div class="d-flex mb-3 step-item">
+                                    <div class="me-3">
+                                        <span class="badge rounded-circle bg-primary d-flex align-items-center justify-content-center" style="width: 30px; height: 30px;">1</span>
+                                    </div>
+                                    <div class="w-100">
+                                        <textarea class="form-control mb-2" rows="2" placeholder="Describe este paso..."></textarea>
+                                        <button type="button" class="btn btn-sm text-danger p-0"><i class="bi bi-trash"></i> Eliminar paso</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <button type="button" id="addStepBtn" class="btn btn-light text-primary w-100 mt-2">
+                                <i class="bi bi-plus-circle me-1"></i> Añadir siguiente paso
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="d-grid gap-2 mb-5">
+                        <button type="submit" class="btn btn-primary btn-lg rounded-pill shadow-sm py-3 fw-bold">
+                            ✨ ¡Publicar Receta!
+                        </button>
+                        <a href="index.html" class="btn btn-link text-muted text-decoration-none">Cancelar y volver</a>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // 1. Añadir Ingredientes
+        document.getElementById('addIngredientBtn').addEventListener('click', function() {
+            const container = document.getElementById('ingredientsList');
+            const div = document.createElement('div');
+            div.className = 'input-group mb-2';
+            div.innerHTML = `
+                <span class="input-group-text bg-white border-end-0"><i class="bi bi-dot"></i></span>
+                <input type="text" class="form-control border-start-0" placeholder="Ingrediente...">
+                <button class="btn btn-outline-danger border-start-0" type="button" onclick="this.parentElement.remove()"><i class="bi bi-x"></i></button>
+            `;
+            container.appendChild(div);
+        });
+
+        // 2. Añadir Pasos
+        document.getElementById('addStepBtn').addEventListener('click', function() {
+            const container = document.getElementById('stepsList');
+            const stepCount = container.children.length + 1;
+            const div = document.createElement('div');
+            div.className = 'd-flex mb-3 step-item';
+            div.innerHTML = `
+                <div class="me-3">
+                    <span class="badge rounded-circle bg-primary d-flex align-items-center justify-content-center" style="width: 30px; height: 30px;">${stepCount}</span>
+                </div>
+                <div class="w-100">
+                    <textarea class="form-control mb-2" rows="2" placeholder="Describe el paso ${stepCount}..."></textarea>
+                    <button type="button" class="btn btn-sm text-danger p-0" onclick="this.closest('.step-item').remove()"><i class="bi bi-trash"></i> Eliminar paso</button>
+                </div>
+            `;
+            container.appendChild(div);
+        });
+
+        // 3. [NUEVO] Sincronizar input de raciones con el badge de ingredientes
+        const servingsInput = document.getElementById('servingsInput');
+        const servingsCountSpan = document.getElementById('servingsCount');
+
+        servingsInput.addEventListener('input', function() {
+            // Si está vacío o es menor que 1, ponemos 1 por defecto en la vista
+            const val = this.value;
+            servingsCountSpan.textContent = (val && val > 0) ? val : '-';
+        });
+    </script>
+</body>
+</html>
