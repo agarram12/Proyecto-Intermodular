@@ -1,15 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
-/* Animación perfil de usuario */
 @keyframes animacionUsuario {
     0% {
         opacity: 0;
-        /* Empieza girada 90 grados (de canto, invisible) */
         transform: rotateY(90deg); 
     }
     100% {
         opacity: 1;
-        /* Termina de frente */
         transform: rotateY(0deg); 
     }
 }
@@ -65,7 +62,6 @@ a:hover {
 .navbar {
     background-color: #fff;
     border-bottom: 1px solid rgba(0, 0, 0, 0.03);
-    /* Línea muy sutil */
 }
 
 .navbar-brand {
@@ -76,7 +72,6 @@ a:hover {
 .search-input {
     border-radius: 20px;
     background-color: #f0f2f5;
-    /* Un gris un pelín más oscuro para contraste */
     padding-left: 20px;
     font-size: 0.95rem;
 }
@@ -84,13 +79,10 @@ a:hover {
 .search-input:focus {
     background-color: #fff;
     box-shadow: 0 0 0 3px rgba(118, 149, 59, 0.2);
-    /* Resplandor verde suave */
 }
 
-/* Barra de navegación */
 .nav-link {
     color: #888;
-    /* Gris suave por defecto */
     transition: all 0.2s;
 }
 
@@ -99,12 +91,10 @@ a:hover {
     color: var(--brand-primary) !important;
 }
 
-/* Tarjetas del feed y widgets laterales */
 .card {
     border: none;
     border-radius: var(--card-radius);
     background: #fff;
-    /* Sombra difusa y elegante (Material Design vibes) */
     box-shadow: 0 4px 12px rgba(75, 56, 42, 0.06);
     transition: transform 0.2s, box-shadow 0.2s;
     overflow: hidden;
@@ -136,8 +126,6 @@ a:hover {
     color: var(--brand-primary);
 }
 
-/* Botones y elementos */
-
 .btn-primary {
     background-color: var(--brand-primary);
     border-color: var(--brand-primary);
@@ -147,7 +135,6 @@ a:hover {
     color: #fff;
 }
 
-/* Botón oscuro una vez se pone el ratón encima */
 .btn-primary:hover,
 .btn-primary:active,
 .btn-primary:focus {
@@ -155,7 +142,6 @@ a:hover {
     border-color: var(--brand-dark-green) !important;
 }
 
-/* borde de afuera con el color principal */
 .btn-outline-primary {
     color: var(--brand-primary);
     border-color: var(--brand-primary);
@@ -179,28 +165,21 @@ a:hover {
     color: #fff;
 }
 
-/* Iconos y alertas */
 .text-danger {
     color: var(--brand-cta) !important;
 }
 
-/* Estrellas */
 .text-warning {
     color: var(--brand-accent) !important;
-    /* Estrellas amarillas */
 }
 
-/* Texto principal */
 .text-primary {
     color: var(--brand-primary) !important;
 }
 
-/* Hover para los botones grises de adjuntar imagen, etc */
 .hover-bg-light:hover {
     background-color: #e9ecef !important;
 }
-
-/* Colores para perfil de usuario */
 
 .profile-banner {
     height: 180px;
@@ -229,7 +208,6 @@ a:hover {
     animation: animacionUsuario 0.8s ease-out forwards;
 }
 
-/* Colores para las estadisticas */
 .stat-box {
     background-color: #f8f9fa;
     border-radius: 12px;
@@ -242,14 +220,11 @@ a:hover {
     background-color: #eee;
 }
 
-/* Responsive para móvil */
-
 @media (max-width: 768px) {
     :root {
         --navbar-height: 70px;
     }
 
-    /* Ajustes de tarjeta para moviles */
     .card-body {
         padding: 1rem;
     }
